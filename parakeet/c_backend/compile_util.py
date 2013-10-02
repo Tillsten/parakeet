@@ -173,6 +173,7 @@ def run_cmd(cmd, env = None, label = ""):
         subprocess.check_call(cmd, stdout = fnull, stderr = err_file, env = env)
       except:
         print "Parakeet encountered error(s) during compilation: "
+        err_file.seek(0)
         print err_file.read()
         raise 
     
